@@ -15,12 +15,12 @@ phases:
       - mvn clean package -Dmaven.test.skip=true
       - echo " building docker image"
       - docker build -t service/auth-app .
-      - docker tag service/auth-app 234825976347.dkr.ecr.us-east-2.amazonaws.com/rbs-pod2-authreporeg:auth-app
+      - docker tag service/auth-app 234825976347.dkr.ecr.us-east-2.amazonaws.com/authenticationms:auth-app
    post_build:
       commands:
       - echo "Entered the post-build phase"
       - docker push 234825976347.dkr.ecr.us-east-2.amazonaws.com/rbs-pod2-authreporeg:auth-app
-      - printf '[{"name":"rbspod2-container","imageUri":"%s"}]' 234825976347.dkr.ecr.us-east-2.amazonaws.com/rbs-pod2-authreporeg:auth-app
+      - printf '[{"name":"rbspod2-container","imageUri":"%s"}]' 234825976347.dkr.ecr.us-east-2.amazonaws.com/authenticationms:auth-app
 artifacts:
    files:
    - authenticationms/taskdefinition.json
