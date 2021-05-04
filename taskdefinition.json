@@ -1,0 +1,4 @@
+[{
+    "name": "rbspod2-container",
+    "imageUri": "234825976347.dkr.ecr.us-east-2.amazonaws.com/rbs-pod2-authreporeg:auth-app"
+}]
